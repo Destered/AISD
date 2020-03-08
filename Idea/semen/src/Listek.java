@@ -1,6 +1,3 @@
-import java.util.Collection;
-import java.util.Iterator;
-
 public class Listek  {
     Figure[] mas = new Figure[0];
     int i = -1;

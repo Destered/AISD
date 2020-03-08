@@ -1,14 +1,13 @@
 import java.text.DecimalFormat;
-import java.util.Objects;
 
 public class Figure {
-    enum Type{Square,Round,Line};
-    enum Color{White,Black,Red,Blue,Green};
+    enum Type{Square,Round,Line}
+    enum Color{White,Black,Red,Blue,Green}
     Type type;
     int x1;
     int x2;
     int y1;
-    int y2=0;
+    int y2;
     Color color;
 
     public Figure(String type, String color, int x1, int x2, int y1, int y2) {
