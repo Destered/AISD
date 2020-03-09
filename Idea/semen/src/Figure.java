@@ -46,7 +46,6 @@ public class Figure {
     }
 
     public double getSquare(){
-        double square = 0;
         if(type == Type.Square){
         double side = x2-x1;
         double base = y1-y2;
