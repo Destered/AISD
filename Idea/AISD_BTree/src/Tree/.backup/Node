@@ -1,0 +1,14 @@
+package Tree;
+
+public class Node {
+    final static int t = 2;
+    int [] keys = new int [2*t];
+    Node [] child = new Node[2*t+1];
+    Node parent = null;
+    int countKey;
+    int countChild;
+    boolean leaf = false;
+
+    public Node() {
+    }
+}
