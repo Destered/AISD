@@ -8,15 +8,18 @@ import java.io.IOException;
 
 public class core {
 
-    private static void dataFromFile(String filename, BTree tree) throws IOException {
-        FileReader fr = new FileReader("./src/Tree/InputData/" + filename); // знак '#' является разделителем
-        BufferedReader br = new BufferedReader(fr);
-        String str;
-        while ((str = br.readLine()) != null && !str.equals("")) {
-            String[] buf = str.split("#");
-            tree.insert(new Key(Integer.parseInt(buf[0]), buf[1]));
+    private static void dataFromFile(int lastNum, BTree tree) throws IOException {
+        for (int i = 1; i <= lastNum; i++) {
+
+            FileReader fr = new FileReader("./src/Tree/InputData/DataPack_" + i); // знак '#' является разделителем
+            BufferedReader br = new BufferedReader(fr);
+            String str;
+            while ((str = br.readLine()) != null && !str.equals("")) {
+                String[] buf = str.split("#");
+                tree.insert(new Key(Integer.parseInt(buf[0]), buf[1]));
+            }
+            fr.close();
         }
-        fr.close();
     }
 
     public static void main(String[] args) throws Exception {
@@ -28,7 +31,7 @@ public class core {
          */
 
         BTree tree = new BTree();
-        dataFromFile("DataPack_1", tree); //считываем из набора данных
+        dataFromFile( 100,tree); //считываем из набора данных
         double start = System.nanoTime();
         System.out.println(tree.search(7));
         System.out.println(((System.nanoTime() - start) / 1000000 + ";"));
